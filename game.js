@@ -303,7 +303,7 @@ var zenbu = new Zenbu();
 zenbu.addWonk(zenbu.longEgg.sceneData[0].wonk);
 
 function onUserInput(e) {
-	var a = zenbu.longEgg.wonkLevel * 7;
+	var a = zenbu.longEgg.wonkLevel * 5;
 	if (zenbu.longEgg.isWobbling) {
 		a = 20;
 	}
