@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Egglongy—Long Egg, Short Story</title>
+
+    <style>
+
+    	html {
+    		box-sizing: border-box;
+    	}
+  		*, *:before, *:after {
+  		  box-sizing: inherit;
+  		}
+
+    	body {
+    		background: #000;
+    		margin: 0;
+    	}
+
+      canvas { position: absolute; }
+      #stage {
+        position: relative;
+        width: 920px;
+        height: 480px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="egg-images" style="display: none">
+      <img src="eggbutt.png" id="eggbutt"/>
+      <img src="eggmid.png" id="eggmid"/>
+      <img src="eggtop.png" id="eggtop"/>
+    </div>
+    <div id="stage">
+      <canvas id="egglongy" width=920 height=480></canvas>
+    </div>
+    <audio id="effect"></audio>
+    <audio id="song" src="audio/r90s.mp3"></audio>
+  </body>
+
+	<script>
+    var canvas = document.getElementById('egglongy');
+    var ctx = canvas.getContext('2d');
+    var stage = document.getElementById('stage');
+
+    var scaleX = window.innerWidth / canvas.width;
+    var scaleY = window.innerHeight / canvas.height;
+    var scaleToFit = Math.min(scaleX, scaleY);
+    stage.style.transformOrigin = '0 0'; //scale from top left
+    stage.style.transform = 'scale(' + scaleToFit + ')';
+  </script>
+  <script src="game.js"></script>
+</html>
